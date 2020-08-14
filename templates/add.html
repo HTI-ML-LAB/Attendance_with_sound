@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lib/bootstrap.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lib/font-awesome.min.css') }}">
+  <title>Thêm nhân viên</title>
+</head>
+<body>
+  <form class="form-horizontal" method="post" enctype="multipart/form-data" role="form" action="">
+  <input type="text" class="test_data" style="display: none;">
+  <div class="container">
+    <div id="new-employee-profile" style="width: 70%; margin: auto; border : 2px solid black; height: 99vh; margin-top : 5px">
+   
+      <div class="row">
+        <p style="font-size: 30px; text-align:center; margin-top: 20px;">Form đăng ký thông tin</p>
+      </div>
+      <hr style="border-top : 1px solid black">
+      <div class="row" style="margin-top: 50px;">
+          
+              <!-- left column -->
+              <!-- edit form column -->
+              <div class="col-md-12 personal-info">
+                <div class="form-group">
+                  <div class="text-center" id="div-update-avatar">
+                    <div id="image-avatar">
+                        <img src="" style="width: 180px; height: 180px;" id="employee-modal-avatar" class="" alt="avatar">
+                    </div>
+                    <h6>Tải lên một ảnh mới...</h6>
+                    <input type="file" class="form-control" id="input-image-new" name="input-image-new" style="width: 150px; margin : auto"><br>
+                </div>
+              </div>
+                <div class="form-group" style="margin-top: 20px;">
+                    <div class="col-md-3"></div>
+                    <label class="col-md-2 control-label" style="text-align: left;">Họ và tên</label>
+                    <div class="col-md-4">
+                        <input id="input-username" class="form-control" type="text" name="name" placeholder="Username">
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                  <div class="form-group">
+                      <div class="col-md-3"></div>
+                      <label class="col-md-2 control-label" style="text-align: left;">Năm sinh</label>
+                      <div class="col-md-4">
+                          <input id="input-year-born" class="form-control" type="text" name="year" placeholder="Year">
+                      </div>
+                      <div class="col-md-2"></div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-md-3"></div>
+                      <label class="col-md-2 control-label" style="text-align: left;">Số điện thoại</label>
+                      <div class="col-md-4">
+                          <input id="input-phone" class="form-control" type="text" name="phone" placeholder="Phone">
+                      </div>
+                      <div class="col-md-2"></div>
+                  </div>
+                  
+                  <br>
+              </div>
+         
+      </div>
+      <div class="row" style="margin-top: 20px;">
+          <div class="col-md-5 col-xs-4"></div>
+          <div class="col-md-4 col-xs-4">
+              <input type="submit" id="input-btn-save" class="btn btn-success custom-background-btn-primary" name="submit" value="Lưu lại">
+              <span></span>
+              <input data-dismiss="modal" type="button" id="input-btn-cancel" class="btn btn-primary custom-background-btn-reset" value="Hủy bỏ">
+          </div>
+          <div class="col-md-3 col-xs-4"></div>
+      </div>
+  </div>
+  </div>
+</form>
+<!-- Javascript Libs -->
+
+
+<script src="{{ url_for('static', filename='lib/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='2.js') }}"></script>
+
+
+
+</body>
+</html>
