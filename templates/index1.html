@@ -18,36 +18,6 @@
       <div id="image" class="col-md-2" style="margin-top : 50px">
       
           <!-- <img id = "image1" src=""  width = 300px height=300px; style="border: 1px solid black;"> -->
-          <table id="myTable" class="datatable2 table table-bordered" cellspacing="0" width="100%" >
-            <thead>
-            <tr>
-              <td></td>
-              <td style="text-align: center; " id = "fullname-show"></td>
-            </tr>
-          </thead>
-
-          <tbody >
-            <tr>
-              <td></td>
-              
-              <td style="text-align: center; " id = "fullname-show"></td>
-            </tr>
-
-            <tr>
-              <td></td>
-              <td style="text-align: center; " id = "fullname-show"></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td style="text-align: center; " id = "fullname-show"></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td style="text-align: center; " id = "fullname-show"></td>
-            </tr>
-          </tbody>
-          </table>
-          <br>
         
       </div>
      
@@ -57,25 +27,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
   <script type="text/javascript">
-
-    function show(str,name) {
-    var table = document.getElementById("myTable");
-    var row = table.insertRow(0);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    cell1.innerHTML = '<img src="'+str+'\" width = 150px height=150px; style="border: 1px solid black;">';
-    cell2.innerHTML = '<em style="font-family: FANTASY; font-size: 20px;">'+name+'</em>';
-    table.deleteRow(table.rows.length - 1)
-    }
-
-
     var socket = io.connect('http://' + document.domain + ':' + location.port);
 
     socket.on( 'my response', function( mgs) {
     //  {  console.log(mgs.image)
-        // $('#image').append('<img src="'+mgs.image+'\" width = 300px height=300px; style="border: 1px solid black;">')
+        $('#image').append('<img src="'+mgs.image+'\" width = 300px height=300px; style="border: 1px solid black;">')
         // $( '#image1' ).attr('src',mgs.image);
-        show(mgs.image,mgs.name)
       }
     )
   </script>
