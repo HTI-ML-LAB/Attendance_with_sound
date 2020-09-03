@@ -7,6 +7,8 @@ Requirements :
   ```
 Model:
   ```Contact me : https://www.facebook.com/hoangquoc.hao```
+  ``` Push model : checkpoint.pth into face/alignment/retinaface_pytorch
+                   model_ir_se50.pth and model_mobilefacenet.pth into face/src/weights
 
 Run:
   ```After put model to folder and install requirements run python3 app
