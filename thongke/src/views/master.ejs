@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flat Admin V.2 - Free Bootstrap Admin Templates</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/login/logo.jpg" type="image/x-icon">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <!-- CSS Libs -->
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap-switch.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/checkbox3.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="lib/AlertifyJS/build/css/alertify.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/select2.min.css">
+    <!-- CSS App -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/admin/main.css">
+    <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
+</head>
+
+<body class="flat-blue">
+
+<div class="app-container">
+    <div class="row content-container">
+        
+        <div class="side-menu sidebar-inverse">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="side-menu-container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">
+                            <div class="icon glyphicon glyphicon-ok-circle"></div>
+                            <div class="title">Attendance-Class-System</div>
+                        </a>
+                    </div>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+        </div>
+        <!-- Main Content -->
+        <div class="tab-content">            
+            <div class="container-fluid tab-pane fade active in" id="main-attendance-class-page">
+                <div class="side-body">
+                    <div class="row">            
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-10 col-xs-12">
+                            <ul class="nav nav-tabs" role="tablist" id = "navbar-main-view">
+                                <li role="presentation" id = "class-mng" class="active"><a href="#attendance" aria-controls="attendance" role="tab" data-toggle="tab">Attendance</a></li>
+                                <li role="presentation"><a href="#management" aria-controls="management" role="tab" data-toggle="tab">Management</a></li>
+                            </ul>
+                            <div class="tab-content" id = "view-frame-all">
+                                <div class="card container-fluid tab-pane fade in active"  id = "attendance">
+                                    <div class="card-header">
+                                        <div class="card-title">
+                                            <div class="title" style="width: 100%;">
+                                                <span>Attendance</span>
+                                            </div>
+                                        </div>
+                                        <div class="add-new-icon title" style="width: 300px; float: right; display: flex">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="datatable table table-bordered" cellspacing="0" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th  style="text-align: center;">Ngày</th>
+                                                    <th  style="text-align: center;">Họ Tên</th>
+                                                    <th  style="text-align: center;">Time Start</th>
+                                                    <th style="text-align: center;">Time End</th>
+                                                    <th style="text-align: center;">Total Time</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% attendances.forEach((att) => { %>
+                                                    <tr>
+                                                        <td style="text-align: center;"><%= att.date %></td>
+                                                        <td style="text-align: center;"><%= att.name %></td>
+                                                        <td style="text-align: center;"><%= att.firsttime %></td>
+                                                        <td style="text-align: center;"><%= att.lasttime%></td>
+                                                        
+                                                        <td style="text-align: center;"><%= att.total %></td>
+                                                    </tr>
+                                                <% }) %>
+                                                   
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="card container-fluid tab-pane fade"  id = "management">
+                                    <div class="card-header">
+                                        <div class="card-title">
+                                            <div class="title" style="width: 100%;">
+                                                <span>Management Employee</span>
+                                            </div>
+                                        </div>
+                                        <div class="add-new-icon title" style="width: 300px; float: right; display: flex">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="datatable3 table table-bordered" cellspacing="0" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th  style="text-align: center;">Year</th>
+                                                    <th  style="text-align: center;">Fullname</th>
+                                                    <th  style="text-align: center;">Avatar</th>
+                                                    <th  style="text-align: center;">Phone</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% users.forEach((user) => { %>
+                                                    <tr>
+                                                        <td style="text-align: center;"><%= user.year %></td>
+                                                        <td style="text-align: center;"><%= user.name %></td>
+                                                        <td style="text-align: center;">
+                                                            <img src="<%= user.image %>" style="width : 50px; height : 50px; margin : auto" alt="">
+                                                        </td>
+                                                        <td style="text-align: center;"><%= user.phone%></td>
+                                                    </tr>
+                                                <% }) %>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+   <%- include("footer/footer")%>
+</div>
+<!-- Javascript Libs -->
+<script type="text/javascript" src="lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="lib/js/Chart.min.js"></script>
+<script type="text/javascript" src="lib/js/bootstrap-switch.min.js"></script>
+<script type="text/javascript" src="lib/js/jquery.matchHeight-min.js"></script>
+<script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="lib/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="lib/js/select2.full.min.js"></script>
+<script type="text/javascript" src="lib/js/ace/ace.js"></script>
+<script type="text/javascript" src="lib/js/ace/mode-html.js"></script>
+<script type="text/javascript" src="lib/js/ace/theme-github.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="lib/AlertifyJS/build/alertify.js"></script>
+<script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
