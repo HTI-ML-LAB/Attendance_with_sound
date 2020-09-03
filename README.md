@@ -6,8 +6,7 @@ Requirements :
   Pip3 requirements.txt
   ```
 Model:
-  Push model : checkpoint.pth into face/alignment/retinaface_pytorch
-                   model_ir_se50.pth and model_mobilefacenet.pth into face/src/weights 
+  Push model : checkpoint.pth into face/alignment/retinaface_pytorch model_ir_se50.pth and model_mobilefacenet.pth into face/src/weights 
 
 
 Run:
